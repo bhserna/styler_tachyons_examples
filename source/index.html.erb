@@ -1,0 +1,18 @@
+<div class="<%= styles.container %>">
+  <div class="<%= styles.menu.header %>">
+    <h1>Examples</h1>
+  </div>
+
+  <ul class="<%= styles.menu.list %>">
+    <% Example.all.group_by(&:category_name).each do |category_name, examples| %>
+      <li class="<%= styles.menu.list_item %>">
+        <%= category_name.humanize %>
+        <ul class="<%= styles.menu.sub_list %>">
+          <% examples.each do |example| %>
+            <li><%= link_to example.name.humanize, example.path, class: styles.menu.example_link %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,60 @@
+<%
+  articles = [{
+    title: "Tech Giant Invests Huge Money to Build a Computer Out of Science Fiction",
+    summary: "The tech giant says it is ready to begin planning a quantum computer, a powerful cpu machine that relies on subatomic particles instead of transistors.",
+    image: "http://mrmrs.github.io/photos/cpu.jpg",
+    image_alt: "Photo of a dily lit room with a computer interface terminal.",
+    author: "Robin Darnell",
+    date: "Nov. 21, 2016"
+  }, {
+    title: "A whale takes up residence in a large body of water",
+    summary: "This giant of a whale says it is ready to begin planning a new swim later this afternoon. A powerful mammal that relies on fish and plankton instead of hamburgers.",
+    image: "http://mrmrs.github.io/photos/whale.jpg",
+    image_alt: "Photo of a whale's tale coming crashing out of the water.",
+    author: "Katherine Grant",
+    date: "Nov. 19, 2016"
+  }, {
+    title: "‘We Couldn’t Believe Our Eyes’: A Lost World of Vinyl Is Found",
+    summary: "Archaeologists have found more than 40 tons of vinyl records, some more than a five years old, shedding light on early hipster trends.",
+    image: "http://mrmrs.github.io/photos/warehouse.jpg",
+    image_alt: "Photo of a warehouse with stacked shelves.",
+    author: "Imelda Clancy",
+    date: "Nov. 19, 2016"
+  }]
+
+  styles = Styler.new do
+    style :container, %w(mw7 center)
+    style :title, %w(athelas ph3 ph0-l)
+
+    collection :article do
+      style :container, %w(pv4 bt bb b--black-10 ph3 ph0-l)
+      style :layout, %w(flex flex-column flex-row-ns)
+      style :main, %w(w-100 w-60-ns pr3-ns order-2 order-1-ns)
+      style :title, %w(f3 athelas mt0 lh-title)
+      style :summary, %w(f5 f4-l lh-copy athelas)
+      style :image_container, %w(pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns)
+      style :image, %w(db)
+      style :author, %w(f6 lh-copy gray mv0)
+      style :date, %w(f6 db gray)
+    end
+  end
+%>
+
+<section class="<%= styles.container %>">
+  <h2 class="<%= styles.title %>">News</h2>
+  <% articles.each do |article| %>
+    <article class="<%= styles.article.container %>">
+      <div class="<%= styles.article.layout %>">
+        <div class="<%= styles.article.main %>">
+          <h1 class="<%= styles.article.title %>"><%= article[:title] %></h1>
+          <p class="<%= styles.article.summary %>"><%= article[:summary] %></p>
+        </div>
+        <div class="<%= styles.article.image_container %>">
+          <img src="<%= article[:image] %>" class="<%= styles.article.image %>" alt="<%= article[:image_alt] %>">
+        </div>
+      </div>
+      <p class="<%= styles.article.author %>">By <span class="ttu"><%= article[:author] %></span></p>
+      <time class="<%= styles.article.date %>"><%= article[:date] %></time>
+    </article>
+  <% end %>
+</section>

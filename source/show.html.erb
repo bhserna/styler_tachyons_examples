@@ -1,0 +1,19 @@
+---
+title: "Styler components | <%= example.name.humanize %>"
+---
+
+<div class="<%= styles.container %>">
+  <%= link_to "< Back to index", "/", class: styles.example.back %>
+
+  <div class="<%= styles.example.header %>">
+    <h1><%= example.name.humanize %></h1>
+  </div>
+
+  <div class="<%= styles.example.preview %>">
+    <%= partial example.template_path %>
+  </div>
+
+  <div class="<%= styles.example.code %>">
+    <pre class="language-erb" style="margin: 0"><code><%= escape_html example.code %></code></pre>
+  </div>
+</div>

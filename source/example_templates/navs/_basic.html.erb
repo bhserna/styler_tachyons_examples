@@ -1,0 +1,17 @@
+<%
+  styles = Styler.new do
+    style :container, %w(sans-serif bg-black-90 w-100 ph3 pv3 pv4-ns ph4-m ph5-l)
+    style :links, %w(f6 fw6 ttu tracked)
+    style :link, %w(link dim white dib mr3)
+    style :last_link, [link - "mr3"]
+  end
+%>
+
+<header class="<%= styles.container %>">
+  <nav class="<%= styles.links %>">
+    <a class="<%= styles.link %>">Home</a>
+    <a class="<%= styles.link %>">About</a>
+    <a class="<%= styles.link %>">Store</a>
+    <a class="<%= styles.last_link %>">Contact</a>
+  </nav>
+</header>

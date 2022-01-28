@@ -1,0 +1,7 @@
+%ul
+  - examples.each do |example|
+    - if example.nested_examples?
+      %li= example.name
+      = render "list", examples: example.examples
+    - else
+      %li= link_to example.name, example_path(example)

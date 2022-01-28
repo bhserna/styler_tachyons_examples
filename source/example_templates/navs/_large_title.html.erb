@@ -1,0 +1,19 @@
+<%
+  styles = Styler.new do
+    style :container, %w(serif pa3 pa4-ns)
+    style :title, %w(link dim black b f1 f-headline-ns tc db mb3 mb4-ns)
+    style :links, %w(tc pb3)
+    style :link, %w(link dim gray f6 f5-ns dib mr3)
+    style :last_link, [link - "mr3"]
+  end
+%>
+
+<nav class="<%= styles.container %>">
+  <a class="<%= styles.title %>" href="#" title="Home">Site Name</a>
+  <div class="<%= styles.links %>">
+    <a class="<%= styles.link %>" href="#" title="Home">Home</a>
+    <a class="<%= styles.link %>" href="#" title="About">About</a>
+    <a class="<%= styles.link %>" href="#" title="Store">Store</a>
+    <a class="<%= styles.last_link %>" href="#" title="Contact">Contact</a>
+  </div>
+</nav>

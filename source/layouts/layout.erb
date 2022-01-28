@@ -1,0 +1,33 @@
+<!doctype html>
+<html class="<%= styles.html_tag %>">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title || "Styler gem and Tachyons components" %></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-solarizedlight.min.css" integrity="sha512-fibfhB71IpdEKqLKXP/96WuX1cTMmvZioYp7T6I+lTbvJrrjEGeyYdAf09GHpFptF8toQ32woGZ8bw9+HjZc0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <%= stylesheet_link_tag "site" %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js" integrity="sha512-TbHaMJHEmRBDf9W3P7VcRGwEmVEJu7MO6roAE0C4yqoNHeIVo3otIX3zj1DOLtn7YCD+U8Oy1T9eMtG/M9lxRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <%= javascript_include_tag "site" %>
+  </head>
+  <body class="<%= styles.body_tag %>">
+    <div class="<%= styles.header.container %>">
+      <%= link_to "by Benito Serna", "https://bhserna.com", class: styles.link %>
+      <h1 class="<%= styles.header.title %>">Styler gem and Tachyons components</h1>
+
+      <p class="<%= styles.header.description %>">
+        A list of examples from the list of <a href="https://tachyons.io/components/">Tachyons components</a>,
+        showing you how you can use the <a href="https://bhserna.com/styler-a-tool-to-compose-css-classes-with-ruby.html">styler gem</a>
+        to define the styles composing the tachyons css classes.
+      </p>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
+

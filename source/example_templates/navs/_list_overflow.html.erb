@@ -1,0 +1,16 @@
+<%
+  styles = Styler.new do
+    style :container, %w(sans-serif ph3 ph5-ns pv4)
+    style :links, %w(nowrap overflow-x-auto)
+    style :link, %w(link dim gray f5 f4-ns dib mr3)
+  end
+%>
+
+<nav class="<%= styles.container %>">
+  <div class="<%= styles.links %>">
+    <% 36.times do |i| %>
+      <a class="<%= styles.link %>" href="#" title="Link <%= i %>">Link <%= i %></a>
+    <% end %>
+  </div>
+</nav>
+

@@ -1,0 +1,10 @@
+<%
+  styles = Styler.new do
+    style :container, %w(pa4 tc)
+    style :img, %w(h3 w3 dib)
+  end
+%>
+
+<div class="<%= styles.container %>">
+  <img src="http://tachyons.io/img/logo.jpg" class="<%= styles.img %>" alt="avatar">
+</div>

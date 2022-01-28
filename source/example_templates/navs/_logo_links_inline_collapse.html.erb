@@ -1,0 +1,23 @@
+<%
+  styles = Styler.new do
+    style :container, %w(sans-serif db dt-l w-100 border-box pa3 ph5-l)
+    style :logo, %w(db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l)
+    style :logo_img, %w(dib w2 h2 br-100)
+    style :links, %w(db dtc-l v-mid w-100 w-75-l tc tr-l)
+    style :link, %w(link dim dark-gray f6 f5-l dib mr3 mr4-l)
+    style :last_link, [link - "mr3" - "mr4-l"]
+  end
+%>
+
+<nav class="<%= styles.container %>">
+  <a class="<%= styles.logo %>" href="#" title="Home">
+    <img alt="Site Name" class="<%= styles.logo_img %>" src="http://tachyons.io/img/logo.jpg"/>
+  </a>
+  <div class="<%= styles.links %>">
+    <a class="<%= styles.link %>" href="#">Home</a>
+    <a class="<%= styles.link %>" href="#">How it Works</a>
+    <a class="<%= styles.link %>" href="#">Blog</a>
+    <a class="<%= styles.link %>" href="#">Press</a>
+    <a class="<%= styles.last_link %>" href="#">Contact</a>
+  </div>
+</nav>
