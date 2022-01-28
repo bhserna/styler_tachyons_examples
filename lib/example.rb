@@ -28,7 +28,7 @@ class Example
   end
 
   def path
-    "examples/#{category_name}/#{name}"
+    "examples/#{category_name}/#{name}.html"
   end
 
   def template_path
