@@ -28,7 +28,8 @@ Example.all.each do |example|
     example.path,
     'show.html',
     locals: { example: example },
-    layout: "layout"
+    layout: "layout",
+    ignore: true
   )
 end
 
@@ -49,10 +50,3 @@ end
 #   activate :minify_css
 #   activate :minify_javascript
 # end
-
-
-activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.remote = 'git@github.com:bhserna/styler_tachyons_examples.git' # remote name or git url, default: origin
-  deploy.branch = 'master' # default: gh-pages
-end
