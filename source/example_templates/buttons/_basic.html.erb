@@ -1,0 +1,111 @@
+<%
+styles = Styler.new do
+  colors = [
+    :black, :near_black, :dark_gray, :mid_gray,
+    :purple, :light_purple, :hot_pink, :dark_pink,
+    :navy, :dark_blue, :dark_green
+  ]
+
+  color_class = -> color { color.to_s.gsub("_", "-") }
+  bg_class = -> color { "bg-#{color_class.(color)}" }
+
+  style :base, %w(f6 link dim ph3 pv2 mb2 dib)
+
+  collection :button do
+    colors.each do |color|
+      style color, [base, "white", bg_class.(color)]
+    end
+
+    collection :thin_border do
+      colors.each do |color|
+        style color, [base, "ba", color_class.(color)]
+      end
+    end
+
+    collection :border do
+      colors.each do |color|
+        style color, [base, "ba", "bw1", color_class.(color)]
+      end
+    end
+
+    collection :thick_border do
+      colors.each do |color|
+        style color, [base, "ba", "bw1", color_class.(color)]
+      end
+    end
+  end
+end
+%>
+
+<div class="ph3">
+  <h1 class="f6 fw6 ttu tracked">Basic button</h1>
+  <a class="<%= styles.button.black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.near_black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.dark_gray %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.mid_gray %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.light_purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.hot_pink %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.dark_pink %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.navy %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.dark_blue %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.dark_green %>" href="#0">Button Text</a>
+</div>
+<div class="ph3 mt4">
+  <h1 class="f6 fw6 ttu tracked">Basic Button with Thin Border</h1>
+  <a class="<%= styles.button.thin_border.black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.near_black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.dark_gray %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.mid_gray %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.thin_border.purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.light_purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.hot_pink %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.dark_pink %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.thin_border.navy %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.dark_blue %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thin_border.dark_green %>" href="#0">Button Text</a>
+</div>
+<div class="ph3 mt4">
+  <h1 class="f6 fw6 ttu tracked">Basic Button with Border</h1>
+  <a class="<%= styles.button.border.black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.near_black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.dark_gray %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.mid_gray %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.border.purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.light_purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.hot_pink %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.dark_pink %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.border.navy %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.dark_blue %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.border.dark_green %>" href="#0">Button Text</a>
+</div>
+<div class="ph3 mt4">
+  <h1 class="f6 fw6 ttu tracked">Basic Button with Thick Border</h1>
+  <a class="<%= styles.button.thick_border.black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.near_black %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.dark_gray %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.mid_gray %>" href="#0">Button Text</a>
+</div>
+<div class="ph3">
+  <a class="<%= styles.button.thick_border.purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.light_purple %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.hot_pink %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.dark_pink %>" href="#0">Button Text</a>
+</div>
+<div class="ph3 mb4">
+  <a class="<%= styles.button.thick_border.navy %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.dark_blue %>" href="#0">Button Text</a>
+  <a class="<%= styles.button.thick_border.dark_green %>" href="#0">Button Text</a>
+</div>
